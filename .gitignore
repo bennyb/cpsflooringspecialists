@@ -1,0 +1,21 @@
+# --- Project-level ---
+.DS_Store
+db/*.sql
+db/*.sql.gz
+_archive/
+
+# --- WordPress: ignore everything in public/ except what we develop ---
+public/*
+!public/wp-content/
+public/wp-content/*
+!public/wp-content/themes/
+public/wp-content/themes/*
+!public/wp-content/themes/cps-flooring/
+
+# Theme junk
+public/wp-content/themes/cps-flooring/error_log
+public/wp-content/themes/cps-flooring/node_modules/
+
+# DDEV-generated / local-only
+.ddev/db_snapshots/
+.ddev/import-db/
