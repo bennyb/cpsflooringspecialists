@@ -19,3 +19,6 @@ public/wp-content/themes/cps-flooring/node_modules/
 # DDEV-generated / local-only
 .ddev/db_snapshots/
 .ddev/import-db/
+
+# Deployment packages
+deploy/
