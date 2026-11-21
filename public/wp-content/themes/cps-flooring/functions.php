@@ -597,3 +597,17 @@ add_filter('use_block_editor_for_post_type', '__return_false', 10);
 
 
 
+
+/**
+ * Don't lazy-load MetaSlider banner images.
+ *
+ * They're output inside the page content with width="0" height="0", so WordPress
+ * lazy-loads them, which can leave the above-the-fold banner blank.
+ */
+function cps_no_lazy_load_slider_images( $loading_attrs, $tag_name, $attr ) {
+	if ( 'img' === $tag_name && isset( $attr['class'] ) && false !== strpos( $attr['class'], 'msDefaultImage' ) ) {
+		unset( $loading_attrs['loading'] );
+	}
+	return $loading_attrs;
+}
+add_filter( 'wp_get_loading_optimization_attributes', 'cps_no_lazy_load_slider_images', 10, 3 );

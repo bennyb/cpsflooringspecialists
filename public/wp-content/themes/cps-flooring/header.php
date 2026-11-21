@@ -19,7 +19,7 @@
 	<link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>">
 	<?php endif; ?>
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
-        <link href="<?php echo bloginfo('template_directory');?>/css/style.css" type="text/css" rel="stylesheet" />
+        <link href="<?php echo esc_url( get_template_directory_uri() . '/css/style.css?ver=' . filemtime( get_template_directory() . '/css/style.css' ) ); ?>" type="text/css" rel="stylesheet" />
 		<script src="<?php bloginfo("template_directory"); ?>/js/jquery-1.10.2.min.js"></script>
 	<?php wp_head(); ?>
 	<script>

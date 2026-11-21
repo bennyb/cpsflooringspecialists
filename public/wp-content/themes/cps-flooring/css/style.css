@@ -943,3 +943,33 @@ blockquote.easy_testimonial {
 		text-align:center;
 	}
 }
+/* ==========================================================================
+   Block editor (Gutenberg) layout — replaces WPBakery row/column styles.
+   Page content uses Group/Columns blocks carrying the old WPBakery row classes.
+   ========================================================================== */
+
+/* Columns blocks are flex by default; these theme grids need display:grid. */
+.wp-block-columns.gridlist-2,
+.wp-block-columns.grid-row4,
+.wp-block-columns.container-row-grid2 {
+	display: grid;
+	margin-bottom: 0;
+}
+.wp-block-columns.gridlist-2 { gap: 30px; }
+.wp-block-columns.grid-row4 { gap: 30px; margin: 30px 0; }
+.wp-block-columns.container-row-grid2 { gap: 70px; }
+
+/* Images inside the service tiles sit flush like the old single-image element. */
+.gridCol-1 .wp-block-image { margin: 0; }
+
+/* Paragraph spacing (WPBakery pages used &nbsp; spacer paragraphs for this). */
+.container-row p + p,
+.inner-row p + p,
+.testimonial-box p + p {
+	margin-top: 29px;
+}
+
+/* MetaSlider outputs width="0" height="0" on banner images; newer versions no longer override it. */
+.banner_row .metaslider img {
+	height: auto;
+}
