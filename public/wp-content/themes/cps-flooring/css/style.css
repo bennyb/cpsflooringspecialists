@@ -973,3 +973,17 @@ blockquote.easy_testimonial {
 .banner_row .metaslider img {
 	height: auto;
 }
+
+/* About page: photo floated right of the intro text. */
+.wp-block-image.about-right {
+	max-width: 50%;
+}
+
+/* Contact page: 40/60 columns; spacing comes from .contact_right padding, not gap. */
+.wp-block-columns.contact_row {
+	gap: 0;
+	margin-bottom: 0;
+}
+.contact_left .contact-address {
+	margin-bottom: 29px;
+}
